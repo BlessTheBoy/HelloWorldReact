@@ -7,12 +7,16 @@ import Count from './components/Counter'
 import FunctionClick from './components/FunctionClick';
 import ClassClick from './components/ClassClick';
 import EventBind from './components/EventBind';
+import UserGreeting from './components/UserGreeting';
+import NameList from './components/NameList';
 
 function App() {
   return (
     <div className="App">
-      <EventBind />
-      <Message />
+      <NameList />
+      {/* <UserGreeting /> */}
+      {/* <EventBind />
+      <Message /> */}
       {/* <Count />
       <FunctionClick />
       <ClassClick />
