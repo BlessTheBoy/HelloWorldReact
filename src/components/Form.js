@@ -1,11 +1,52 @@
 import React, { Component } from 'react'
 
-export class Form extends Component {
+class Form extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             username: "",
+             comments: "",
+             topic: "vue"
+        }
+    }
+
+    handleUsernameChange = (event) => {
+        this.setState({
+            username: event.target.value
+        })
+    }
+    handleCommentChange = (event) => {
+        this.setState({
+            comments: event.target.value
+        })
+    }
+    handleTopicChange = (event) => {
+        this.setState({
+            topic: event.target.value
+        })
+    }
+    
     render() {
         return (
-            <div>
-                Form Component
-            </div>
+            <form>
+                <div>
+                    <label>Username</label>
+                    <input type='text' value={this.state.username} onChange={this.handleUsernameChange}/>
+                </div>
+                <div>
+                    <label>Comments</label>
+                    <textarea value={this.state.comments} onChange={this.handleCommentChange}/>
+                </div>
+                <div>
+                    <label>Topics</label>
+                    <select value={this.state.topic} onChange={this.handleTopicChange}>
+                        <option value='react'>React</option>
+                        <option value='vue'>Vue</option>
+                        <option value='angular'>Angular</option>
+                    </select>
+                </div>
+            </form>
         )
     }
 }
